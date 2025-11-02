@@ -70,7 +70,7 @@ def clientes(conexao, endereco):
                     time.sleep(0.2)  
                     conexao.send(Protocolo.codificar(Protocolo.ACERTOU, "Voceê acertou!!!").encode())
                     
-                    msg_broad = Protocolo.codificar(Protocolo.FIM_PARTIDA, f'Cliebte {endereco} acertou o número {jogo.num_secreto}!')
+                    msg_broad = Protocolo.codificar(Protocolo.FIM_PARTIDA, f'Cliente {endereco} acertou o número {jogo.num_secreto}!')
                     jogo.broadcast(msg_broad, conexao)
                     print(f'Jogador {endereco} venceu! O número era: {jogo.num_secreto}')
             
@@ -82,7 +82,7 @@ def clientes(conexao, endereco):
                         time.sleep(1)
                     #recomecando
                     jogo.inicar_game()
-                    msg_new_game = Protocolo.codificar(Protocolo.INICIAR, f"Novo Jogo¹ Adivinhe o número netre 1 e 100")
+                    msg_new_game = Protocolo.codificar(Protocolo.INICIAR, f"Novo Jogo Adivinhe o número entre 1 e 100")
                     jogo.broadcast(msg_new_game)
             else:
                 time.sleep(0.2)  
