@@ -1,5 +1,5 @@
 #Inicar server, inicar jogo, notificar, remover desconectados, receber dados, criar thread 
-import socket 
+import socket # permite o uso de sockets TCP
 import threading
 import random
 import time
@@ -102,7 +102,7 @@ def clientes(conexao, endereco):
 
 def main():
     # cria socket TCP
-    servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #AF_INET = IPv4, SOCK_STREAM = TCP
     # bind em 8888
     servidor.bind(('localhost', 8888))
     #agaurda conexão
